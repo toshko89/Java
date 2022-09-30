@@ -16,6 +16,7 @@ public class AppliedArithmetics {
         }
 
         Arrays.stream(numbers).forEach(el -> System.out.print(el + " "));
+
     }
 
     private static int[] arithmetic(int[] numbers, String command) {
