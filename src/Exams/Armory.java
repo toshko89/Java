@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Armory {
+    // Тази матрица има телепорти с прескачане
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size = Integer.parseInt(scanner.nextLine());
@@ -41,6 +42,7 @@ public class Armory {
             String command = scanner.nextLine();
             switch (command) {
                 case "up":
+                    matrix[playerRow][playerCol] = "-";
                     playerRow--;
                     if (playerRow < 0) {
                         System.out.println("I do not need more swords!");
@@ -67,6 +69,7 @@ public class Armory {
                     }
                     break;
                 case "down":
+                    matrix[playerRow][playerCol] = "-";
                     playerRow++;
                     if (playerRow >= matrix.length) {
                         System.out.println("I do not need more swords!");
@@ -93,6 +96,7 @@ public class Armory {
                     }
                     break;
                 case "left":
+                    matrix[playerRow][playerCol] = "-";
                     playerCol--;
                     if (playerCol < 0) {
                         System.out.println("I do not need more swords!");
@@ -146,6 +150,10 @@ public class Armory {
                     }
                     break;
             }
+        }
+
+        if (playerRow >= 0 && playerRow < matrix.length && playerCol >= 0 && playerCol > matrix.length) {
+            matrix[playerRow][playerCol] = "A";
         }
 
         if (currentMoney >= toBuy) {
